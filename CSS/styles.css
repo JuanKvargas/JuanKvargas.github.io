@@ -32,28 +32,25 @@ header {
           justify-content: space-between;
 }
 
-.icono-menu {
-  width: 100%;
+#check-menu {
+  display: none;
+}
+
+#burguer-open {
   cursor: pointer;
-  height: 18px;
-}
-
-.barras-menu {
-  width: 27px;
-  height: 5px;
-  border-radius: 3px;
-  -webkit-transition: 0.35s;
-  transition: 0.35s;
-  background: #000000;
-  margin-bottom: 5px;
-}
-
-.checkmenu {
+  font-size: 25px;
+  color: #000000;
+  font-weight: bold;
   float: right;
   display: none;
 }
 
-#check-menu {
+#burguer-close {
+  cursor: pointer;
+  font-size: 29px;
+  color: #000000;
+  font-weight: bold;
+  float: right;
   display: none;
 }
 
@@ -421,9 +418,13 @@ header img {
     padding: 10px 16px;
     max-width: 760px;
   }
-  .checkmenu {
+  #burguer-open {
+    margin-top: -3px;
+    margin-right: 5px;
     display: block;
-    margin-top: 5px;
+  }
+  #burguer-close {
+    margin-top: -3px;
     margin-right: 5px;
   }
   body {
@@ -459,26 +460,14 @@ header img {
   header nav ul li a {
     color: #FFFFFF;
   }
-  .barras-menu:nth-child(1), .barras-menu:nth-child(2) {
-    margin-bottom: 5px;
-  }
-  #check-menu:checked + label .icono-menu .barras-menu {
-    margin: 0;
-  }
-  #check-menu:checked + label .icono-menu .barras-menu:nth-child(1) {
-    -webkit-transform: rotate(765deg) translate(8px, 8.5px);
-            transform: rotate(765deg) translate(8px, 8.5px);
-  }
-  #check-menu:checked + label .icono-menu .barras-menu:nth-child(2) {
-    -webkit-transform: translate(500px);
-            transform: translate(500px);
-  }
-  #check-menu:checked + label .icono-menu .barras-menu:nth-child(3) {
-    -webkit-transform: rotate(-765deg) translateX(-1px);
-            transform: rotate(-765deg) translateX(-1px);
-  }
   #check-menu:checked ~ ul {
     left: 0;
+  }
+  #check-menu:checked ~ #burguer-open {
+    display: none;
+  }
+  #check-menu:checked ~ #burguer-close {
+    display: block;
   }
   .saludo {
     margin-left: 16px;
